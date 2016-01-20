@@ -60,19 +60,26 @@ function player.move(dt)
 	
 	if love.keyboard.isDown("right") and player.xvel < player.speed then
 	player.xvel = player.xvel + player.speed * dt
+	player.sprite = love.graphics.newImage("/Graphics/playerright.png")
 	end
 	if love.keyboard.isDown("left") and player.xvel > -player.speed then
 	player.xvel = player.xvel - player.speed * dt
+	player.sprite = love.graphics.newImage("/Graphics/playerleft.png")
 	end
 	if love.keyboard.isDown("up") and player.yvel > -player.speed then
 	player.yvel = player.yvel - player.speed * dt
+	player.sprite = love.graphics.newImage("/Graphics/playerback.png")
 	end
 	if love.keyboard.isDown("down") and player.yvel < player.speed then
 	player.yvel = player.yvel + player.speed * dt
+	player.sprite = love.graphics.newImage("/Graphics/player.png")
 	end
 	if love.keyboard.isDown("z") then
 	player.speed = 2000 else
 	player.speed = 1000
+	end
+	if love.keyboard.isDown("x") then
+	talk()
 	end
 end
 

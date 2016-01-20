@@ -1,8 +1,16 @@
 require "player"
 require "maps"
 require "gamestate"
+require "collision"
+require "ai"
+require "box"
+require "dialog"
+require "items"
 gamestate = 1
 key = 0
+talk_to = false
+grab_item = "none"
+
 
 
 
@@ -14,6 +22,7 @@ function love.load()
 
 ---------------------- Bibliotek
 	player.load()
+	box.load()
 
 ---------------------- Config
 	screenWidth = love.graphics.getWidth()
@@ -35,9 +44,17 @@ function love.update(dt)
 	UPDATE_PLAYER()
 	player.bounds()
 	check_state()
+	check_collisionBOX()
+	check_items()
+	
+	if key == 2 then
+	check_collisionITEM()	
+	check_collisionAI()
+	end
 end
 
 function love.draw()
+
 	
 	
 	

@@ -21,11 +21,23 @@ function check_state()
 		henrymap()
 		key = 2
 		end
-		------------------ Koordinater för test
+		
+		love.graphics.setColor(255, 255, 255)
+		love.graphics.print("UP/NER/HÖGER/VÄNSTER: Pilar -- SPRING: Z -- TALA: X -- INFO: A", 200, 550 )
+		------------------ Koordinater o skit
+		if love.keyboard.isDown("a") then
 		love.graphics.setColor(255, 255, 255)
 		love.graphics.print("X: " .. player.x, 0, 0)
 		love.graphics.print("Y: " .. player.y, 0, 10)
-		love.graphics.print("Key: " .. key, 0, 20)
+		love.graphics.print("Map: " .. key, 0, 20)
+		love.graphics.print("Colission: " .. collision, 0, 30)
+		end
+		
+		if love.keyboard.isDown("x") then
+		talk()
+		end
+		
+
 	------------------
 		
 	end
